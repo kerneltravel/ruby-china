@@ -191,4 +191,9 @@ module TopicsHelper
   def render_topic_last_be_replied_time(topic)
     timeago(topic.replied_at)
   end
+  
+  def replies_users_for_complete_tag(replies)
+    logins = replies.collect { |r| r.user.blank? ? "" : r.user.login.strip }
+    logins
+  end
 end

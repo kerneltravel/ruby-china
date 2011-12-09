@@ -105,6 +105,7 @@
 #replies .reply .body { line-height:180%; font-size:14px; text-overflow: ellipsis; word-wrap: break-word; }
 #replies .reply .body img { max-width:622px;}
 
+#reply { position:relative; }
 #reply.form textarea { width:578px; }
 
 .edit_tools { text-align:left; margin-bottom:2px }

@@ -12,4 +12,7 @@
 //= require jquery.hotkeys
 //= require jquery.chosen
 //= require jquery.autogrow-textarea
+//= require suggest_menu
+//= #require string_score
+//= #require suggester
 //= require app

@@ -41,18 +41,26 @@
           <button type="submit" id="btn_reply" class="btn primary" tabindex="2"><%= t("topics.submit_reply")%></button><br />
           <span class="help-inline">Ctrl+Enter</span>
         </div>
-        <%= f.text_area :body,:class => "topic_editor span10", :rows => "4", :tabindex => "1" %><br /><br />
+        <%= f.text_area :body,:class => "topic_editor span10", 'data-suggester-list' => "topic_#{@topic.id}_mentions", :rows => "4", :tabindex => "1" %><br /><br />
         <span class="body helpblock">
           <%= render_cell :topics, :reply_help_block %>
         </span>
       <% end %>
-      <script type="text/javascript">
-        $("#new_reply").submit(function(){
-          $('#btn_reply').button('loading');
-        })
-      </script>
+      <div class="suggester-container js-navigation-container">
+        <div class="suggester" id="topic_<%= @topic.id %>_mentions">
+          <ul>
+              <% replies_users_for_complete_tag(@replies).each do |login| %>
+              <li class="js-navigation-item js-navigation-target" data-user="<%= login %>">
+                <%= login %>
+                <small><%= login %></small>
+              </li>
+              <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
   <% else %>
       <%= render :partial => "topics/translation/need_login_to_reply" %>
   <% end %>
 </div>
+

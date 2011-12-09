@@ -89,5 +89,8 @@ $(document).ready ->
   $("textarea").autogrow()
 
   Topics.hookPreview($(".editor_toolbar"), $(".topic_editor"))
-
+  $("#new_reply").submit () ->
+    $('#btn_reply').button('loading')
+    
+  Suggester.init();
   return
