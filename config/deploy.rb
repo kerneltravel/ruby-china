@@ -1,6 +1,6 @@
 # coding: utf-8
 set :application, "ruby-china"
-set :repository,  "git://github.com/huacnlee/ruby-china.git"
+set :repository,  "git@github.com:kerneltravel/ruby-china.git"
 set :branch, "master"
 set :scm, :git
 set :user, "lyl"
