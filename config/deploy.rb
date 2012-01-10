@@ -44,10 +44,10 @@ task :init_shared_path, :roles => :web do
 end
 
 task :link_shared_files, :roles => :web do
-  run "ln -sf #{deploy_to}/shared/config/config.yml #{deploy_to}/current/config/"
-  run "ln -sf #{deploy_to}/shared/config/mongoid.yml #{deploy_to}/current/config/"
-  run "ln -sf #{deploy_to}/shared/config/redis.yml #{deploy_to}/current/config/"
-  run "ln -sf #{deploy_to}/shared/config/unicorn.rb #{deploy_to}/current/config/"
+  run "ln -sf #{deploy_to}/shared/cached-copy/config/config.yml #{deploy_to}/current/config/"
+  run "ln -sf #{deploy_to}/shared/cached-copy/config/mongoid.yml #{deploy_to}/current/config/"
+  run "ln -sf #{deploy_to}/shared/cached-copy/config/redis.yml #{deploy_to}/current/config/"
+  run "ln -sf #{deploy_to}/shared/cached-copy/config/unicorn.rb #{deploy_to}/current/config/"
   run "ln -s #{deploy_to}/shared/assets #{deploy_to}/current/public/assets"
 end
 
