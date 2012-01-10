@@ -26,6 +26,7 @@ end
 before_fork do |server, worker|
   old_pid = "#{Rails.root}/tmp/pids/unicorn.pid.oldbin"
   fd = IO.sysopen(pid, "w")
+  $stderr.puts pid.to_s
   a = IO.new(fd,"w")
   a.puts server.pid
   if File.exists?(old_pid) && server.pid != old_pid
